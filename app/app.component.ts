@@ -21,12 +21,12 @@ import { Task } from './shared/models/Task'
                 <ul class="list-group tasks-list">
                     <li class="list-group-item" *ngFor="let task of tasks" (click)="selectTask(task)"
                     [class.active]="task === activeTask">
-                        {{ task.name }} ({{ task.description }})
+                        {{ task.name }}
                     </li>
                 </ul> 
             </div>
         </div>
-    </div>
+    
         <div class="col-sm-8">
             <div class="jumbotron" *ngIf="activeTask">
                 <h2>{{ activeTask.name }} <small>{{ activeTask.description }}</small></h2>
@@ -36,11 +36,11 @@ import { Task } from './shared/models/Task'
                 <h2>Choose a task</h2>
             </div>
         </div>  
-    
+    </div>
     </main>
 
 
-    <footer class="text-center footer">Copyright &copy; Yo 2017</footer>
+    <footer class="text-center">Copyright &copy; Yo 2017</footer>
     `,
     styles: [`
         .tasks-list li {
@@ -50,15 +50,10 @@ import { Task } from './shared/models/Task'
             font-size: 80px;
         }
         .gocrazy {
-            background: red;
+            background: #cc0000;
             color: #FFF;
         }
-        .footer {
-            position: relative;
-	        margin-top: -150px; /* negative value of footer height */
-	        height: 150px;
-	        clear:both;
-        } 
+
     `]
 })
 export class AppComponent{
@@ -68,7 +63,9 @@ export class AppComponent{
     tasks: Task[] = [
         {id:1,name:"Default task",description:"Task set up by default"},
         {id:2,name:"Do things",description:"You have to do things"},
-        {id:1,name:"Come on",description:"Move your ass"}
+        {id:3,name:"Come on",description:"Move your ass"},
+        {id:4,name:"Gosh",description:"What are you doing?"},
+        {id:5,name:"Go home",description:"You are drunk"}
     ];
 
     activeTask: Task;
